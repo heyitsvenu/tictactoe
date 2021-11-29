@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
+
+:root {
+  --heading-font: 'Source Code Pro', monospace;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  background-color: darkslategrey;
+  color: #ddd;
+}
+
+#content {
+  width: 100vw;
+  height: 100vh;
+}
+
+#content .heading {
+  text-align: center;
+  padding: 30px;
+}
+
+#content h1 {
+  font-size: 4rem;
+  font-family: var(--heading-font);
+  font-weight: 700;
+}
+
+.message {
+  text-align: center;
+  padding: 30px;
+}
+
+.message p {
+  font-size: 3rem;
+  padding: 10px;
+}
+
+.resultMessage {
+  display: none;
+}
+
+.player {
+  font-weight: bold;
+  animation: colorBlink 1s ease-in-out 0s infinite alternate-reverse;
+}
+
+.won {
+  display: block;
+}
+
+@keyframes colorBlink {
+  0% {
+    color: #ddd;
+  }
+  100% {
+    color: darkgoldenrod;
+  }
+}
+
+.board-section {
+  width: 100%;
+  max-height: 600px;
+  display: flex;
+  margin-top: 20px;
+}
+
+#board {
+  /* border: 1px solid darkgoldenrod; */
+  width: 450px;
+  height: 450px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 5px;
+}
+
+.cell {
+  border: 1px solid orange;
+  width: 150px;
+  height: 150px;
+  background-color: rgba(105, 105, 105, 0.705);
+  font-size: 7rem;
+  display: grid;
+  place-items: center;
+  border-radius: 5px;
+}
+.cell:hover {
+  cursor: pointer;
+  background-color: rgba(105, 105, 105, 0.5);
+}
+
+.buttons {
+  width: 452px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.restartBtn {
+  height: 40px;
+  width: 100%;
+  border: none;
+  background-color: rgb(34, 63, 63);
+  font-size: 1.8rem;
+  color: #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 1px 5px 0px rgba(105, 105, 105, 0.705);
+}
+
+.restartBtn:hover {
+  cursor: pointer;
+  color: darkslategray;
+  background-color: #ddd;
+}
+
+@media screen and (max-width: 768px) {
+  #board {
+    width: 300px;
+    height: 300px;
+  }
+
+  .cell {
+    width: 100px;
+    height: 100px;
+    font-size: 5rem;
+  }
+
+  .buttons {
+    width: 302px;
+  }
+}
+
+@media screen and (max-height: 768px) {
+  #board {
+    width: 300px;
+    height: 300px;
+  }
+
+  .cell {
+    width: 100px;
+    height: 100px;
+    font-size: 5rem;
+  }
+
+  .buttons {
+    width: 302px;
+  }
+}
